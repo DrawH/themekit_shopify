@@ -1,0 +1,90 @@
+<hr>
+<div id="section-cta">
+  <div class="container">
+    <h3> {{ section.settings.text-box }} </h3>
+    <a href="{{ section.settings.link }}" class="button" style="background-color:{{ section.settings.color }}; width:{{ section.settings.font_size }}px; button:hover:{{ section.settings.hover }} !important">{{ section.settings.linktext }}</a>
+  </div>
+</div>
+<hr>
+
+<style>
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.button {
+  display: inline-block;
+  padding: 0.85em 1.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #5c6ac4;
+  border: none;
+  border-radius: 0.62em;
+  box-shadow: 0 0.25em #999999; 
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Call to action",
+  "settings": [
+    {
+      "id": "text-box",
+      "type": "text",
+      "label": "Heading"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "Button link"
+    },
+    {
+      "id": "linktext",
+      "type": "text",
+      "label": "Button text",
+      "default": "Click here"
+    },
+    {
+        "id": "color",
+        "type": "color",
+        "label": "color",
+        "default": "#5c6ac4"
+    },
+    {
+        "id": "font_size",
+        "type": "range",
+        "min": 150,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Font-size",
+        "default": 190
+    },
+    {
+        "id": "hover",
+        "type": "color",
+        "label": "color",
+        "default": "#5c6ac4"
+    }
+  ]
+  ,
+  "presets": [
+    {
+      "name": "Call to Action",
+      "category": "Call To Action"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

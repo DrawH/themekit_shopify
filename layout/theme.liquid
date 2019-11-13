@@ -75,11 +75,14 @@
   </a>
 
   {% section 'header' %}
-
+    
   <div class="page-container page-element is-moved-by-drawer">
     <main class="main-content" id="MainContent" role="main">
       {{ content_for_layout }}
     </main>
+      <section>
+        
+      </section>
 
     {% section 'footer' %}
   </div>
@@ -117,5 +120,6 @@
     <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
     <li id="a11y-slideshow-info">{{- 'homepage.hero.navigation_instructions' | t -}}</li>
   </ul>
+
 </body>
 </html>
