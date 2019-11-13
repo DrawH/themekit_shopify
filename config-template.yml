@@ -1,4 +1,7 @@
 development:
   password: 
-  theme_id: 
-  store:
+  theme_id: "79183577137"
+  store: https://pierre-renesme.myshopify.com
+  ignore_files: 
+   - config/settings_data.json
+   
