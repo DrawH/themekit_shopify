@@ -1,15 +1,19 @@
-<hr>
-<div>
+
+  <img src="{{ section.settings.imagedefond | img_url: '1920x1080' }}">
     <ul class="navbar">
-  <li><a href="">Home</a></li>
-  <li><a href="">News</a></li>
-  <li><a href="">Contact</a></li>
-  <li><a href="">About</a></li>
+  {% for link in linklists[section.settings.listmenu].links %}
+    <li class="navbar-li"><a href="{{ link.url }}">{{ link.title }}</a></li>
+  {% endfor %}
 </ul>
 </div>
-<hr>
+
 
 <style>
+
+.imagefond {
+  margin: 0;
+  padding: 0;
+}
 
 .navbar {
   list-style-type: none;
@@ -19,20 +23,21 @@
   background-color: {{ section.settings.navcolor }};
 }
 
-li {
+.navbar-li {
   float: left;
 }
 
-li a {
+.navbar-li a {
   display: block;
-  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  color: {{ section.settings.acolor }};
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+.navbar-li a:hover {
+  color: {{ section.settings.ahover }};
   background-color: {{ section.settings.navhover }};
 }
 
@@ -54,6 +59,29 @@ li a:hover {
         "type": "color",
         "label": "hover",
         "default": "#111"
+    },
+    {
+      "id": "ahover",
+        "type": "color",
+        "label": "text hover",
+        "default": "#fff"
+    },
+    {
+      "id": "acolor",
+        "type": "color",
+        "label": "text color",
+        "default": "#fff"
+    },
+    {
+      "id": "imagedefond",
+      "type": "image_picker",
+      "label": "image de fond"
+    },
+    {
+      "id": "listmenu",
+      "type": "link_list",
+      "label": "menu-perso",
+      "default": "main-menu"
     }
   ]
   ,
