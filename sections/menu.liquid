@@ -1,0 +1,73 @@
+<hr>
+<div>
+    <ul class="navbar">
+  <li><a href="">Home</a></li>
+  <li><a href="">News</a></li>
+  <li><a href="">Contact</a></li>
+  <li><a href="">About</a></li>
+</ul>
+</div>
+<hr>
+
+<style>
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: {{ section.settings.navcolor }};
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: {{ section.settings.navhover }};
+}
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Menu",
+  "settings": [
+    {
+        "id": "navcolor",
+        "type": "color",
+        "label": "color",
+        "default": "#333"
+    },
+    {
+      "id": "navhover",
+        "type": "color",
+        "label": "hover",
+        "default": "#111"
+    }
+  ]
+  ,
+  "presets": [
+    {
+      "name": "Menu",
+      "category": "Menu"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
